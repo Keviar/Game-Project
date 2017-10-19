@@ -127,6 +127,7 @@ def menu(exits, room_items, inv_items):
 
 #Main game loop
 def main():
+    print("There is a legendary house party tonight but your parents won't let you go. You have to gather your things, sneak out of the house, get to the party and make it back home without your parents noticing. Good luck.")
     while True:
         print_room(current_room)
         print_inventory_items(inventory)
