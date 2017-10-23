@@ -41,7 +41,7 @@ room_upstairs_hallway = {
 
     "description" : "",
 
-    "exits" : {"" : "Bedroom", "" : "P_Bedroom", "" : "S_Bedroom", "" : "Closet", "" : "Bathroom", "downstairs" : "D_Hallway"},
+    "exits" : {"1" : "B_Bedroom", "2" : "P_Bedroom", "3" : "S_Bedroom", "4" : "Closet", "5" : "Bathroom", "downstairs" : "D_Hallway"},
 
     "items" : []
 }
