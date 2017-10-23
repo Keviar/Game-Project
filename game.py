@@ -92,6 +92,16 @@ def execute_drop(item_id):
     if item_in_list == False:
         print("You cannot drop that.")
 
+#Uses the item the player specifies
+def execute_use(item_id):
+    item_in_list = False
+    for item in inventory:
+        if item_id in item["id"]:
+            item_in_list = True
+            inventory.remove(item)
+    if item_in_list == False:
+        print("You cannot use that.")
+
 #Executes the required function based on the command the player gives
 def execute_command(command):
     if 0 == len(command):
@@ -127,7 +137,8 @@ def menu(exits, room_items, inv_items):
 
 #Main game loop
 def main():
-    print("There is a legendary house party tonight but your parents won't let you go. You have to gather your things, sneak out of the house, get to the party and make it back home without your parents noticing. Good luck.")
+    print("BILLY'S ESCAPE\n")
+    print("There is a legendary house party tonight but your parents won't let you go. You have to gather your things and sneak out of the house without your parents noticing. Good luck.")
     while True:
         print_room(current_room)
         print_inventory_items(inventory)
