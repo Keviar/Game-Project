@@ -2,19 +2,33 @@ from map import rooms
 from player import * 
 from items import *
 from gameparser import *
-import pygame.mixer.music
+
 #http://www.pygame.org/docs/ref/music.html
 from os import system
+import time
+import string 
+
+'''  TOD - made changes in list_of_items
+           added 3 variabls in player.py
+           added one line execute_use
+           added the check_win_condition function
+           imported string
+           accidently deleted the import.pygame.music line sorry.'''
+
 
 #Creates a string of items separated by commas
 "Changes made here - Jacob"
 def list_of_items(items):
-    item_string = ""
+    names = []
+    for x in items:
+        names.append(x['name'])
+    return ', '.join(names)
+    '''item_string = ""
     for item in items:
         item_string += (item["name"])
         if items.index(item) != len(items) - 1:
             item_string += ", "
-    return item_string
+    return item_string '''
 
 #Prints a list of the items found in the specified room
 def print_room_items(room):
@@ -113,6 +127,12 @@ def list_abilities(item):
         print(key + ": " + str(item["abilities"][key]))
     input("> ")
 
+def check_win_condition(item):
+    if current_room['name'] == 'Your bedroom' and item == 'rope':
+        can_escape = True
+    if bribed_sister == True:
+        can_escape = True
+
 #Executes the required function based on the command the player gives
 def execute_command(command):
     if 0 == len(command):
@@ -154,6 +174,7 @@ def menu(exits, room_items, inv_items):
 
 #Main game loop
 def main():
+    global can_escape
     print("""
  ____  ____  ____  __   _  _ /___    ____  ___   ___    __    ____  ____ 
 (  _ \(_  _)(_  _)(  ) ( \/ )/ __)  ( ___)/ __) / __)  /__\  (  _ \( ___)
@@ -168,6 +189,9 @@ def main():
         command = menu(current_room["exits"], current_room["items"], inventory)
         execute_command(command)
         system('cls')
+        if can_escape == True:
+            print('Woohoo /some other text/')
+            break
 
 if __name__ == "__main__":
     main()
