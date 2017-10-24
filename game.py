@@ -9,8 +9,8 @@ import time
 import string 
 
 '''  TOD - made changes in list_of_items
+            added in the main function a check to ssee if we won.
            added 3 variabls in player.py
-           added one line execute_use
            added the check_win_condition function
            imported string
            accidently deleted the import.pygame.music line sorry.'''
