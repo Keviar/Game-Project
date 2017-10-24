@@ -1,4 +1,5 @@
 import string
+import re
 
 #Words to ignore in the user input
 skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',
@@ -14,22 +15,22 @@ skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',
 #Removes the unnecessary words from the user's input
 def filter_words(words, skip_words):
     filtered_list = []
-    for x in words:
-        if x not in skip_words:
-            filtered_list.append(x)
+    for word in words:
+        if word not in skip_words:
+            filtered_list.append(word)
     return filtered_list
 
 #Remove punctuation from the user's input    
 def remove_punct(text):
-    no_punct = ""
-    for char in text:
-        if not (char in string.punctuation):
-            no_punct = no_punct + char
+    table = str.maketrans({key: None for key in string.punctuation})
+    return text.translate(table)
 
-    return no_punct
+def remove_spaces(text):
+    return re.sub("^\s+|\s+$", "", text)
+
 
 #Removes punctuation and filters the skip words from the user input
 def normalise_input(user_input):
-    no_punct = remove_punct(user_input).lower()
+    no_punct = remove_punct(remove_spaces(user_input)).lower()
     word_list = filter_words(no_punct.split(), skip_words)       
     return word_list

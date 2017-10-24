@@ -2,26 +2,27 @@ from map import rooms
 from player import * 
 from items import *
 from gameparser import *
+from os import system
 
 #Creates a string of items separated by commas
+"Changes made here - Jacob"
 def list_of_items(items):
-    item_list = ""
-    list_length = len(items)
+    item_string = ""
     for item in items:
-        item_list = item_list + item["name"]
-        if list_length > 1:
-            item_list = item_list + ", "
-        list_length -= 1
-    return item_list
+        item_string += (item["name"])
+        if items.index(item) != len(items) - 1:
+            item_string += ", "
+    return item_string
 
 #Prints a list of the items found in the specified room
 def print_room_items(room):
-    if len(room["items"]) > 0:
-        print("There is " + str(list_of_items(room["items"]) + " here.\n"))
+    if room["items"]:
+        print("There is " + list_of_items(room["items"]) + " here.\n")
 
 #Prints a list of items in the player's inventory
 def print_inventory_items(items):
-    print("You have " + str(list_of_items(inventory) + ".\n"))
+    if inventory:
+        print("You have " + list_of_items(inventory) + ".\n")
 
 #Prints information about the specified room
 def print_room(room):
@@ -45,28 +46,25 @@ def print_menu(exits, room_items, inv_items):
     print("You can:")
     for direction in exits:
         print_exit(direction, exit_leads_to(exits, direction))
-
-    if len(room_items) > 0:
-        for item in room_items:
-            print("TAKE " + item["id"].upper() + " to take " + item["name"])
-    if len(inv_items) > 0:
-        for item in inv_items:
-            print("DROP " + item["id"].upper() + " to drop your " + item["name"])
-    
-    print("What do you want to do?")
-
-#Checks if a given exit is valid
-def is_valid_exit(exits, chosen_exit):
-    return chosen_exit in exits
+    for item in room_items:
+        print("TAKE " + item["id"].upper() + " to take " + item["name"])
+    for item in inv_items:
+        print("DROP " + item["id"].upper() + " to drop your " + item["name"])
+    for item in inv_items:
+        print ("USE " + item["id"].upper() + " to use your " + item["name"])
+    print()    
+    print("What would you like to do?")
 
 #Moves the player to the room they have chosen
+"Changes made here, eliminates need for 'is_valid_exit' function - Jacob"
 def execute_go(direction):
     global current_room
-    if is_valid_exit(current_room["exits"], direction):
-        current_room = rooms[current_room["exits"][direction]]
-        print("Moving to " + current_room["name"])
+    exits = current_room["exits"]
+    if direction in exits.keys():
+        current_room = rooms[exits[direction]]
     else:
-        print("You cannot go there.")
+        print("\nYou cannot go there.")
+        input()
 
 #Picks up the item the player takes
 def execute_take(item_id):
@@ -80,27 +78,38 @@ def execute_take(item_id):
                 print("You have taken " + item["name"])
         else:
             print("You cannot take that.")
+            input()
 
 #Drops the item the player drops
+"Changes made here - Jacob"
 def execute_drop(item_id):
     item_in_list = False
     for item in inventory:
-        if item_id in item["id"]:
+        if item_id == item["id"]:
             item_in_list = True
-            current_room["items"].append(item)
-            inventory.remove(item)
+            current_room["items"].append(inventory.pop(inventory.index(item)))
     if item_in_list == False:
         print("You cannot drop that.")
+        input()
 
 #Uses the item the player specifies
+"Changes made here - Jacob"
 def execute_use(item_id):
     item_in_list = False
     for item in inventory:
-        if item_id in item["id"]:
+        if item_id == item["id"]:
             item_in_list = True
-            inventory.remove(item)
+            list_abilities(item)
     if item_in_list == False:
         print("You cannot use that.")
+
+def list_abilities(item):
+    print()
+    print("How would you like to use the " + item["id"] + "?")
+    print()
+    for key in item["abilities"]:
+        print(key + ": " + str(item["abilities"][key]))
+    input("> ")
 
 #Executes the required function based on the command the player gives
 def execute_command(command):
@@ -125,6 +134,12 @@ def execute_command(command):
         else:
             print("Drop what?")
 
+    elif command[0] == "use":
+        if len(command) > 1:
+            execute_use(command[1])
+        else:
+            print("Use what?")
+
     else:
         print("This makes no sense.")
 
@@ -137,13 +152,20 @@ def menu(exits, room_items, inv_items):
 
 #Main game loop
 def main():
-    print("BILLY'S ESCAPE\n")
-    print("There is a legendary house party tonight but your parents won't let you go. You have to gather your things and sneak out of the house without your parents noticing. Good luck.")
+    print("""
+ ____  ____  ____  __   _  _ /___    ____  ___   ___    __    ____  ____ 
+(  _ \(_  _)(_  _)(  ) ( \/ )/ __)  ( ___)/ __) / __)  /__\  (  _ \( ___)
+ ) _ < _)(_  _)(_  )(__ \  / \__ \   )__) \__ \( (__  /(__)\  )___/ )__) 
+(____/(____)(____)(____)(__) (___/  (____)(___/ \___)(__)(__)(__)  (____)
+
+""")
+    print("There is a legendary house party tonight but your parents won't let you go.\nYou have to gather your things and sneak out of the house without your parents noticing.\nGood luck.")
     while True:
         print_room(current_room)
         print_inventory_items(inventory)
         command = menu(current_room["exits"], current_room["items"], inventory)
         execute_command(command)
+        system('cls')
 
 if __name__ == "__main__":
     main()

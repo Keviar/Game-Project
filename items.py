@@ -1,63 +1,89 @@
 item_vodka = {
     "id" : "vodka",
 
-    "name" : "Bottle of Vodka",
+    "name" : "bottle of Vodka",
 
-    "description": ""
+    "description": "",
+
+    "abilities" : {}
 }
 
 item_coke = {
     "id" : "coke",
 
-    "name" : "Bottle of Coke",
+    "name" : "bottle of Coke",
 
-    "description" : ""
+    "description" : "",
+
+    "abilities" : {}
 }
 
 item_backpack = {
     "id" : "backpack",
 
-    "name" : "Backpack",
+    "name" : "backpack",
 
-    "description" : ""
+    "description" : "",
+
+    "abilities" : {}
 }
 
 item_keys = {
     "id" : "keys",
 
-    "name" : "Set of Keys",
+    "name" : "set of keys",
 
-    "description" : "Keys to your house. Make sure you don't lose them or else you'll be sleeping on the streets tonight."
+    "description" : "Keys to your house. Make sure you don't lose them or else you'll be sleeping on the streets tonight.",
+
+    "abilities" : {}
 }
 
 item_rope = {
     "id" : "rope",
 
-    "name" : "Rope",
+    "name" : "rope",
 
-    "description" : ""
+    "description" : "",
+
+    "abilities" : {}
 }
 
 item_laptop = {
     "id" : "laptop",
 
-    "name" : "Laptop",
+    "name" : "laptop",
 
-    "description" : ""
+    "description" : "",
+
+    "abilities" : {}
 }
 
 item_flashlight = {
     "id" : "flashlight",
 
-    "name" : "Flashlight",
+    "name" : "flashlight",
 
-    "description" : ""
+    "description" : "",
+
+    "abilities" : {"vision" : 20}
 }
 
 item_lighter = {
     "id" : "lighter",
 
-    "name" : "Lighter",
+    "name" : "lighter",
 
-    "description" : ""
+    "description" : "",
+
+    "abilities" : {"vision" : 10, "special use" : "item_cigar"}
+}
+
+item_glasses = {
+    "id" : "glasses",
+
+    "name" : "pair of glasses",
+
+    "description" : "",
+
+    "abilities" : {"vision" : 40}
 }
