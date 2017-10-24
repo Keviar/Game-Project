@@ -2,6 +2,8 @@ from map import rooms
 from player import * 
 from items import *
 from gameparser import *
+import pygame.mixer.music
+#http://www.pygame.org/docs/ref/music.html
 
 #Creates a string of items separated by commas
 def list_of_items(items):
