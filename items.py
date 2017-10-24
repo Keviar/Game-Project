@@ -1,7 +1,11 @@
 item_vodka = {
     "id" : "vodka",
 
-    "name" : "Bottle of Vodka",
+    "name" : "bottle of Vodka",
+
+    "description": "",
+
+    "abilities" : {},
 
     "description": "You like to drink...don't you Billy."
 }
@@ -9,7 +13,11 @@ item_vodka = {
 item_coke = {
     "id" : "coke",
 
-    "name" : "Bottle of Coke",
+    "name" : "bottle of Coke",
+
+    "description" : "",
+
+    "abilities" : {},
 
     "description" : "It's a risky game having that vodka without your coke."
 }
@@ -17,7 +25,11 @@ item_coke = {
 item_backpack = {
     "id" : "backpack",
 
-    "name" : "Backpack",
+    "name" : "backpack",
+
+    "description" : "",
+
+    "abilities" : {},
 
     "description" : "You need this to carry multiple items."
 }
@@ -25,15 +37,21 @@ item_backpack = {
 item_keys = {
     "id" : "keys",
 
-    "name" : "Set of Keys",
+    "name" : "set of keys",
 
-    "description" : "Keys to your house. Make sure you don't lose them or else you'll be sleeping on the streets tonight."
+    "description" : "Keys to your house. Make sure you don't lose them or else you'll be sleeping on the streets tonight.",
+
+    "abilities" : {}
 }
 
 item_rope = {
     "id" : "rope",
 
-    "name" : "Rope",
+    "name" : "rope",
+
+    "description" : "",
+
+    "abilities" : {},
 
     "description" : "This could be used for climbing."
 }
@@ -41,7 +59,11 @@ item_rope = {
 item_laptop = {
     "id" : "laptop",
 
-    "name" : "Laptop",
+    "name" : "laptop",
+
+    "description" : "",
+
+    "abilities" : {},
 
     "description" : "Billys' laptop."
 }
@@ -49,15 +71,33 @@ item_laptop = {
 item_flashlight = {
     "id" : "flashlight",
 
-    "name" : "Flashlight",
+    "name" : "flashlight",
 
+    "description" : "",
+
+    "abilities" : {"vision" : 20},
+    
     "description" : "For items which are beyond Billys' vision."
 }
 
 item_lighter = {
     "id" : "lighter",
 
-    "name" : "Lighter",
+    "name" : "lighter",
 
+    "description" : "",
+
+    "abilities" : {"vision" : 10, "special use" : "item_cigar"}
+}
+
+item_glasses = {
+    "id" : "glasses",
+
+    "name" : "pair of glasses",
+
+    "description" : "",
+
+    "abilities" : {"vision" : 40},
+    
     "description" : "Your lighter can help clear objects."
 }

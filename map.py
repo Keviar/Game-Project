@@ -1,21 +1,5 @@
 from items import *
-'''
-room_reception = {
-    "name": "Reception",
 
-    "description":
-    """You are in a maze of twisty little passages, all alike.
-Next to you is the School of Computer Science and
-Informatics reception. The receptionist, Matt Strangis,
-seems to be playing an old school text-based adventure
-game on his computer. There are corridors leading to the
-south and east. The exit is to the west.""",
-
-    "exits": {"south": "Admins", "east": "Tutor", "west": "Parking"},
-
-    "items": [item_biscuits, item_handbook]
-}
-'''
 room_bedroom = {
     "name" : "Your Bedroom",
 
@@ -23,7 +7,7 @@ room_bedroom = {
 
     "exits" : {"out" : "U_Hallway"},
 
-    "items" : [item_laptop]
+    "items" : [item_laptop, item_glasses]
 }
 
 room_lounge = {
