@@ -3,7 +3,7 @@ item_vodka = {
 
     "name" : "Bottle of Vodka",
 
-    "description": ""
+    "description": "You like to drink...don't you Billy."
 }
 
 item_coke = {
@@ -11,7 +11,7 @@ item_coke = {
 
     "name" : "Bottle of Coke",
 
-    "description" : ""
+    "description" : "It's a risky game having that vodka without your coke."
 }
 
 item_backpack = {
@@ -19,7 +19,7 @@ item_backpack = {
 
     "name" : "Backpack",
 
-    "description" : ""
+    "description" : "You need this to carry multiple items."
 }
 
 item_keys = {
@@ -35,7 +35,7 @@ item_rope = {
 
     "name" : "Rope",
 
-    "description" : ""
+    "description" : "This could be used for climbing."
 }
 
 item_laptop = {
@@ -43,7 +43,7 @@ item_laptop = {
 
     "name" : "Laptop",
 
-    "description" : ""
+    "description" : "Billys' laptop."
 }
 
 item_flashlight = {
@@ -51,7 +51,7 @@ item_flashlight = {
 
     "name" : "Flashlight",
 
-    "description" : ""
+    "description" : "For items which are beyond Billys' vision."
 }
 
 item_lighter = {
@@ -59,5 +59,5 @@ item_lighter = {
 
     "name" : "Lighter",
 
-    "description" : ""
+    "description" : "Your lighter can help clear objects."
 }

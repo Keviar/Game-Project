@@ -19,7 +19,7 @@ south and east. The exit is to the west.""",
 room_bedroom = {
     "name" : "Your Bedroom",
 
-    "description" : "",
+    "description" : "You are now in your bedroom where your parents expect you to be studying tonight.",
 
     "exits" : {"out" : "U_Hallway"},
 
@@ -29,7 +29,7 @@ room_bedroom = {
 room_lounge = {
     "name" : "Lounge",
 
-    "description" : "",
+    "description" : "This is where your parents spend most of their time watching TV.",
 
     "exits" : {"hallway" : "D_Hallway", "kitchen" : "Kitchen"},
 
@@ -49,7 +49,7 @@ room_upstairs_hallway = {
 room_closet = {
     "name" : "Closet",
 
-    "description" : "",
+    "description" : "You can use this room to hide!",
 
     "exits" : {"out" : "U_Hallway"},
 
@@ -59,7 +59,7 @@ room_closet = {
 room_kitchen = {
     "name" : "Kitchen",
 
-    "description" : "",
+    "description" : "You are now in the kitchen where you can collect items from the fridge and counter.",
 
     "exits" : {"lounge" : "Lounge"},
 
@@ -69,7 +69,7 @@ room_kitchen = {
 room_bathroom = {
     "name" : "Bathroom",
 
-    "description" : "",
+    "description" : "You can hide here!",
 
     "exits" : {"out" : "U_Hallway"},
 
@@ -87,7 +87,7 @@ room_downstairs_hallway = {
 room_parent_bedroom = {
     "name" : "Parent's Bedroom",
 
-    "description" : "",
+    "description" : "Maybe not the best place to hide.",
 
     "exits" : {"out" : "U_Hallway"},
 
@@ -96,7 +96,7 @@ room_parent_bedroom = {
 room_sharon_bedroom = {
     "name" : "Sharon's Bedroom",
 
-    "description" : "",
+    "description" : "Your sisters bedroom, she's very nosey and may ruin your escape so watch out!",
 
     "exits" : {"out" : "U_Hallway"},
 
@@ -105,7 +105,7 @@ room_sharon_bedroom = {
 room_basement = {
     "name" : "Basement",
 
-    "description" : "",
+    "description" : "You are now in the basement, there are a lot of cob webs here and it's difficult to see without a light.",
 
     "exits" : {"upstairs" : "D_Hallway"},
 
