@@ -5,9 +5,7 @@ item_vodka = {
 
     "description": "",
 
-    "abilities" : {},
-
-    "description": "You like to drink...don't you Billy."
+    "abilities" : {}
 }
 
 item_coke = {
@@ -17,9 +15,7 @@ item_coke = {
 
     "description" : "",
 
-    "abilities" : {},
-
-    "description" : "It's a risky game having that vodka without your coke."
+    "abilities" : {}
 }
 
 item_backpack = {
@@ -29,9 +25,7 @@ item_backpack = {
 
     "description" : "",
 
-    "abilities" : {},
-
-    "description" : "You need this to carry multiple items."
+    "abilities" : {}
 }
 
 item_keys = {
@@ -51,9 +45,7 @@ item_rope = {
 
     "description" : "",
 
-    "abilities" : {},
-
-    "description" : "This could be used for climbing."
+    "abilities" : {}
 }
 
 item_laptop = {
@@ -63,9 +55,7 @@ item_laptop = {
 
     "description" : "",
 
-    "abilities" : {},
-
-    "description" : "Billys' laptop."
+    "abilities" : {}
 }
 
 item_flashlight = {
@@ -75,9 +65,7 @@ item_flashlight = {
 
     "description" : "",
 
-    "abilities" : {"vision" : 20},
-    
-    "description" : "For items which are beyond Billys' vision."
+    "abilities" : {"vision" : 20}
 }
 
 item_lighter = {
@@ -97,7 +85,15 @@ item_glasses = {
 
     "description" : "",
 
-    "abilities" : {"vision" : 40},
-    
-    "description" : "Your lighter can help clear objects."
+    "abilities" : {"vision" : 40}
+}
+
+item_watch = {
+    "id" : "watch",
+
+    "name" : "watch",
+
+    "description" : "",
+
+    "abilities" : {}
 }

@@ -2,6 +2,10 @@ from map import rooms
 from player import * 
 from items import *
 from gameparser import *
+import math
+import msvcrt
+import time
+import timer
 from os import system
 
 #Creates a string of items separated by commas
@@ -99,9 +103,12 @@ def execute_use(item_id):
     for item in inventory:
         if item_id == item["id"]:
             item_in_list = True
-            list_abilities(item)
+            if item_id == "watch":
+                view_watch()
+            #list_abilities(item)
     if item_in_list == False:
         print("You cannot use that.")
+        input()
 
 def list_abilities(item):
     print()
@@ -139,16 +146,22 @@ def execute_command(command):
             execute_use(command[1])
         else:
             print("Use what?")
-
     else:
         print("This makes no sense.")
 
+def view_watch():
+    system('cls')
+    mins = math.floor(10 - ((time.time() - start) / 60))
+    secs = math.floor(60 - (time.time() - start) % 60)
+    timer.countdown(mins, secs)
+            
 #Prints the menu and takes the user input
 def menu(exits, room_items, inv_items):
     print_menu(exits, room_items, inv_items)
     user_input = input("> ")
     normalised_user_input = normalise_input(user_input)
     return normalised_user_input
+
 
 #Main game loop
 def main():
@@ -160,12 +173,16 @@ def main():
 
 """)
     print("There is a legendary house party tonight but your parents won't let you go.\nYou have to gather your things and sneak out of the house without your parents noticing.\nGood luck.")
-    while True:
+    input()
+    global start
+    start = time.time()
+    while time.time() - start < 600:
         print_room(current_room)
         print_inventory_items(inventory)
         command = menu(current_room["exits"], current_room["items"], inventory)
         execute_command(command)
         system('cls')
-
+    print("You ran out of time")
+    input()
 if __name__ == "__main__":
     main()
