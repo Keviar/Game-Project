@@ -31,9 +31,12 @@ def list_of_items(items):
     return item_string '''
 
 #Prints a list of the items found in the specified room
+"Changes made - Seb"
 def print_room_items(room):
     if room["items"]:
         print("There is " + list_of_items(room["items"]) + " here.\n")
+        for item in room["items"]:
+	        print ("! " + item["description"] + " !")
 
 #Prints a list of items in the player's inventory
 def print_inventory_items(items):

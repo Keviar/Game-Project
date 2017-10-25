@@ -73,11 +73,9 @@ item_flashlight = {
 
     "name" : "flashlight",
 
-    "description" : "",
+    "description" : "For items which are beyond Billys' vision.",
 
     "abilities" : {"vision" : 20},
-    
-    "description" : "For items which are beyond Billys' vision."
 }
 
 item_lighter = {
@@ -85,7 +83,7 @@ item_lighter = {
 
     "name" : "lighter",
 
-    "description" : "",
+    "description" : "The lighter can help clear objects.",
 
     "abilities" : {"vision" : 10, "special use" : "item_cigar"}
 }
@@ -94,10 +92,8 @@ item_glasses = {
     "id" : "glasses",
 
     "name" : "pair of glasses",
-
-    "description" : "",
+    
+    "description" : "Glasses will help Billy to see objects clearly.",
 
     "abilities" : {"vision" : 40},
-    
-    "description" : "Your lighter can help clear objects."
 }
