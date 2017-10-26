@@ -19,4 +19,3 @@ def countdown(mins,secs):
             key = msvcrt.getch()
             if(key == b'\x1b'):
                 break
-        
