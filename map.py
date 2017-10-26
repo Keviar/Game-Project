@@ -159,8 +159,9 @@ going to bug you in here."""],
 
     "exits" : {"out" : "U_Hallway"},
 
-    "items" : [],
+    "items" : [item_deodorant],
 }
+
 room_downstairs_hallway = {
     "name" : "Downstairs Hallway",
 
@@ -189,6 +190,7 @@ When did you last check your watch?"""],
 
     "items" : [],
 }
+
 room_parent_bedroom = {
     "name" : "Parent's Bedroom",
 
@@ -209,6 +211,7 @@ the room you decide nothing of interest is here. You better get out before you g
 
     "items" : [],
 }
+
 room_sharon_bedroom = {
     "name" : "Sharon's Bedroom",
 
@@ -234,6 +237,7 @@ she definitely wouldn't help without some sort of bribe. Even worse, she might d
 
     "items" : [],
 }
+
 room_basement = {
     "name" : "basement",
 
@@ -259,6 +263,7 @@ feeling you're going to need whatever's down here. It's not too late to go back.
 
     "items" : [item_rope]
 }
+
 rooms = {
     "B_Bedroom" : room_bedroom,
     "window" : room_window,

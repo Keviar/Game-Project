@@ -1,13 +1,14 @@
 from map import rooms
+from os import system
 from player import * 
 from items import *
-from spiderfight import *
 from gameparser import *
+from spiderfight import *
+import random
 import math
 import msvcrt
 import time
 import timer
-from os import system
 
 #Creates a string of items separated by commas
 "Changes made here - Jacob"
@@ -34,7 +35,9 @@ def print_room(room):
     print()
     print(room["name"].upper())
     print()
-    print(room["description"])
+    y = len(room["description"])
+    x = random.randint(1,y)
+    print(room["description"][x])
     print()
     print_room_items(room)
 
@@ -227,9 +230,15 @@ def add_room(item, room, new_room):
         room["exits"][new_room] = rooms[new_room]["name"]
 
 def initiate_fight():
-    if current_room["name"] == "basement":
+    if current_room["name"] == "basement" and item_flamethrower in inventory:
         spider_web_fight()
-        
+        for item in inventory:
+            if item == item_lighter or item == item_deodorant:
+                inventory.remove(item)
+        inventory.remove(item_flamethrower)
+        print("\nYour lighter has run out of fluid, and your deodorant cant burst into flames...")
+        input()
+        system('cls')
 
 #Main game loop
 def main():
@@ -253,7 +262,7 @@ def main():
         initiate_fight()
         system("cls")
     if current_room["name"] == "window":
-        print("Congratulations, you won!")
+        print("Congratulations, you escaped!")
         input()
     else:
         print("You ran out of time")
