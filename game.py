@@ -35,7 +35,7 @@ def print_room(room):
     print()
     print(room["name"].upper())
     print()
-    y = len(room["description"])
+    y = len(room["description"])- 1
     x = random.randint(1,y)
     print(room["description"][x])
     print()
