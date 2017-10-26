@@ -262,7 +262,6 @@ def main():
     print("-"*50)
     print("Tonight is the night. Jason Terulez is hosting the part of the century! It's only a short walk down the road and you've got an invite!\n\nIf only your parents would let you go!\n\nUse your wits to navigate the house, find items to help you sneak out. Just remember to keep an eye on the time!")
     global start
-    input()
     start = time.time()
     #Starts the background music
     winsound.PlaySound("sounds/bgmusic.wav", winsound.SND_LOOP|winsound.SND_ASYNC)
