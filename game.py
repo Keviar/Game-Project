@@ -114,7 +114,7 @@ def execute_use(item_id):
     if item_in_list == False:
         print("You cannot use that.")
         input()
-
+    
 #Lists the abilities of a given item.
 def list_abilities(item):
     item_abilities = item["abilities"]
