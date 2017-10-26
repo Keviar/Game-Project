@@ -6,6 +6,7 @@ import math
 import msvcrt
 import time
 import timer
+import winsound
 from spiderfight import *
 from os import system
 
@@ -243,7 +244,17 @@ def main():
     print("There is a legendary house party tonight but your parents won't let you go.\nYou have to gather your things and sneak out of the house without your parents noticing.\nGood luck.")
     global start
     start = time.time()
+    bg_music_playing = False
     while time.time() - start < 600 and current_room["name"] != "window":
+        if current_room["name"] == "Basement":
+            winsound.PlaySound("sounds/basement.wav", winsound.SND_LOOP|winsound.SND_ASYNC)
+            bg_music_playing = False
+        elif current_room["name"] == "Bathroom":
+            winsound.PlaySound("sounds/bathroom.wav", winsound.SND_LOOP|winsound.SND_ASYNC)
+            bg_music_playing = False
+        elif bg_music_playing == False:
+            winsound.PlaySound("sounds/bgmusic.wav", winsound.SND_LOOP|winsound.SND_ASYNC)
+            bg_music_playing = True
         add_room(item_rope, rooms["B_Bedroom"], "window")
         add_room(item_flamethrower, rooms["D_Hallway"], "basement")
         print_room(current_room)
@@ -253,6 +264,7 @@ def main():
         initiate_fight()
         system("cls")
     if current_room["name"] == "window":
+        winsound.PlaySound("sounds/window.wav")
         print("Congratulations, you won!")
         input()
     else:

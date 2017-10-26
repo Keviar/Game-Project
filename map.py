@@ -74,7 +74,7 @@ room_downstairs_hallway = {
 
     "description" : "",
 
-    "exits" : {"lounge" : "Lounge", "downstairs" : "U_Hallway"},
+    "exits" : {"lounge" : "Lounge", "upstairs" : "U_Hallway"},
 
     "items" : [],
 }
