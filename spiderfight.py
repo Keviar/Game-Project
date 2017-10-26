@@ -19,6 +19,7 @@ def spider_web_fight():
 	time.sleep(1)
 	i=0
 	win_fight = False
+	win_fight2=False
 	start_fight=time.time()
 	counter=0
 	while (win_fight==False):
@@ -60,7 +61,7 @@ def spider_web_fight():
 	if win_fight==False:
 		print("It's over.")
 		time.sleep(2)
-		break
+		return win_fight2
 	print ("There is a spider web at.... you!?")
 	time.sleep(3)
 	print ("The spider attacks you!")
@@ -85,7 +86,6 @@ def spider_web_fight():
                                    \\
                                     '
                                     """)
-	win_fight2=False
 	while (win_fight2==False):
 		print("""
 You can:
@@ -142,3 +142,4 @@ You cannot RUN... you're too deep in this """)
 				print("The spider missed! Keep going.")
 				time.sleep(2)
 		return win_fight2
+spider_web_fight()
