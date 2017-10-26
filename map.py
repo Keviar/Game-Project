@@ -85,7 +85,7 @@ The washing basket sits on its own by the stairs, it's overflowing with everybod
 You contemplate either looking around upstairs or taking your chances downstairs. 
 You need to get out of the house, and fast."""],
 
-    "exits" : {"1" : "B_Bedroom", "2" : "P_Bedroom", "3" : "S_Bedroom", "4" : "Closet", "5" : "Bathroom", "downstairs" : "D_Hallway"},
+    "exits" : {"bedroom1" : "B_Bedroom", "bedroom2" : "P_Bedroom", "bedroom3" : "S_Bedroom", "closet" : "Closet", "bathroom" : "Bathroom", "downstairs" : "D_Hallway"},
 
     "items" : []
 }
@@ -186,7 +186,7 @@ greets you eerily, should you check down there? You can't remember the last time
 someone actually went down there. Whatever you do, you should probably do it quickly. 
 When did you last check your watch?"""],
 
-    "exits" : {"lounge" : "Lounge", "downstairs" : "U_Hallway"},
+    "exits" : {"lounge" : "Lounge", "upstairs" : "U_Hallway"},
 
     "items" : [],
 }

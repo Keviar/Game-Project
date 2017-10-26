@@ -9,6 +9,7 @@ import math
 import msvcrt
 import time
 import timer
+import winsound
 
 #Creates a string of items separated by commas
 "Changes made here - Jacob"
@@ -231,12 +232,15 @@ def add_room(item, room, new_room):
 
 def initiate_fight():
     if current_room["name"] == "basement" and item_flamethrower in inventory:
+        winsound.PlaySound("sounds/basement.wav", winsound.SND_LOOP|winsound.SND_ASYNC)
+        global bg_music_playing
+        bg_music_playing = False
         spider_web_fight()
         for item in inventory:
             if item == item_lighter or item == item_deodorant:
                 inventory.remove(item)
         inventory.remove(item_flamethrower)
-        print("\nYour lighter has run out of fluid, and your deodorant cant burst into flames...")
+        print("\nYour lighter has run out of fluid, and your deodorant can burst into flames...")
         input()
         system('cls')
 
@@ -252,16 +256,29 @@ def main():
     print("There is a legendary house party tonight but your parents won't let you go.\nYou have to gather your things and sneak out of the house without your parents noticing.\nGood luck.")
     global start
     start = time.time()
-    while time.time() - start < 600 and current_room["name"] != "window":
+    winsound.PlaySound("sounds/bgmusic.wav", winsound.SND_LOOP|winsound.SND_ASYNC)
+    global bg_music_playing
+    bg_music_playing = True
+    while time.time() - start < 600 and current_room["name"] != "window":        
         add_room(item_rope, rooms["B_Bedroom"], "window")
         add_room(item_flamethrower, rooms["D_Hallway"], "basement")
         print_room(current_room)
         print_inventory_items(inventory)
+        if current_room["name"] == "Basement":
+            winsound.PlaySound("sounds/basement.wav", winsound.SND_LOOP|winsound.SND_ASYNC)
+            bg_music_playing = False
+        elif current_room["name"] == "Bathroom":
+            winsound.PlaySound("sounds/bathroom.wav", winsound.SND_LOOP|winsound.SND_ASYNC)
+            bg_music_playing = False
+        elif bg_music_playing == False:
+            winsound.PlaySound("sounds/bgmusic.wav", winsound.SND_LOOP|winsound.SND_ASYNC)
+            bg_music_playing = True
         command = menu(current_room["exits"], current_room["items"], inventory)
-        execute_command(command)
+        execute_command(command)        
         initiate_fight()
         system("cls")
     if current_room["name"] == "window":
+        winsound.PlaySound("sounds/window.wav", 1)
         print("Congratulations, you escaped!")
         input()
     else:

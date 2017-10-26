@@ -1,5 +1,6 @@
 import time
 import random
+import winsound
 from os import system
 
 def spider_web_fight():
