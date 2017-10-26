@@ -1,6 +1,7 @@
 from map import rooms
 from player import * 
 from items import *
+from spiderfight import *
 from gameparser import *
 import math
 import msvcrt
@@ -227,8 +228,7 @@ def add_room(item, room, new_room):
 
 def initiate_fight():
     if current_room["name"] == "basement":
-        import spiderfight
-        spiderfight.spider_web_fight()
+        spider_web_fight()
         
 
 #Main game loop
