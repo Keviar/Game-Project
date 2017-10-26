@@ -1,14 +1,18 @@
+import time
+import system
+
 def spider_web_fight():
-	basement = ['window', 'cellar', 'door', 'control room']
-	direction = ['front', 'left', 'back', 'right']
-	print("You must burn the spider webs before the timer runs out!")
-	time.sleep(3)
-	print("You must type the direction the web is at! Every time you destroy a web, you face at the location the web was at.")
-	time.sleep(3)
-	print("Memorize the room! If you forget where you are facing, you can check where everything is located by typing check.")
-	time.sleep(3)
+        system('cls')
+        basement = ['window', 'cellar', 'door', 'control room']
+        direction = ['front', 'left', 'back', 'right']
+        print("You must burn the spider webs before the timer runs out!")
+        time.sleep(3)
+        print("You must type the direction the web is at! Every time you destroy a web, you face at the location the web was at.")
+        time.sleep(3)
+        print("Memorize the room! If you forget where you are facing, you can check where everything is located by typing check.")
+        time.sleep(3)
 	for y in range (0, 4):
-		print ("The " + basement[y] + " is at the " + direction[y] + ".")
+                print ("The " + basement[y] + " is at the " + direction[y] + ".")
 	time.sleep(7)
 	print ("You have 30 seconds, Go!")
 	time.sleep(1)
@@ -24,7 +28,7 @@ def spider_web_fight():
 		if l == 'check':
 			for x in range (0, 4):
 				if i==4:
-					i=0
+                                        i=0
 				print ("The " + basement[i] + " is at the " + direction[x] + ".")
 				i = i+1
 			current_time=30-int(time.time()-start_fight)
@@ -131,3 +135,4 @@ You cannot RUN... you're too deep in this """)
 				print("The spider missed! Keep going.")
 				time.sleep(2)
 		return win_fight2
+spider_web_fight()
