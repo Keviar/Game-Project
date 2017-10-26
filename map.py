@@ -1,8 +1,10 @@
 from items import *
 
 room_bedroom = {
+    #Name of the room
     "name" : "Your Bedroom",
 
+    #Three descriptions of the room which are randomly selected when the player enters the room
     "description" : ["""
 You stand in your bedroom. The room is traditional of any teenage boy's bedroom. A poster from your 
 favourite band, Muse, overlooks your single bed. Your desk sits next to the window, on it, a few 
@@ -24,8 +26,10 @@ The door is open and you can see out into the upstairs hallway. Near your bed yo
 It's partially open, luckily you know it opens much more than that. Could you get out here? 
 There's no way you'd survive the drop without at least broken ankles."""],
     
+    #Exits in the room
     "exits" : {"out" : "U_Hallway"},
 
+    #Items in the room
     "items" : [item_laptop, item_glasses]
 }
 

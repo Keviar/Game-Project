@@ -1,10 +1,14 @@
 item_vodka = {
+    #ID of the item
     "id" : "vodka",
 
+    #Name of the item
     "name" : "bottle of Vodka",
 
+    #Description of the item
     "description": "Not your favorite drink, but it's about as much alcohol as you can fit in one bottle. You'll impress with this that's for sure. It just needs something to mix it with.",
 
+    #List of uses the item has
     "abilities" : {}
 }
 
@@ -74,7 +78,7 @@ item_flamethrower = {
     "name" : "flamethrower",
 
     "description" : "Just like you saw your mate John do out the back of the school shed, who knew deodeorant could be so fun?! Flamethrower is an understatement.",
-    
+
     "abilities" : {}
 }
 

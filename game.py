@@ -4,6 +4,7 @@ from player import *
 from items import *
 from gameparser import *
 from spiderfight import *
+import sys
 import random
 import math
 import msvcrt
@@ -151,7 +152,8 @@ def list_abilities(item):
             return
     else:
         print("This item currently has no use.\n")
-                              
+
+#Litss the options the player has when they use an item
 def list_choices(uses):
     i = 1
     for item in uses:
@@ -215,6 +217,7 @@ def execute_command(command):
     else:
         print("This makes no sense.")
 
+#Displays the time when the player uses the watch
 def view_watch():
     system('cls')
     mins = math.floor(10 - ((time.time() - start) / 60))
@@ -228,10 +231,12 @@ def menu(exits, room_items, inv_items):
     normalised_user_input = normalise_input(user_input)
     return normalised_user_input
 
+#Adds new exit to a room
 def add_room(item, room, new_room):
     if item in inventory:
         room["exits"][new_room] = rooms[new_room]["name"]
 
+#Checks if the player is able to start the fight in the basement and initiates the fight if they have the correct items
 def initiate_fight():
     if current_room["name"] == "basement" and item_flamethrower in inventory:
         winsound.PlaySound("sounds/basement.wav", winsound.SND_LOOP|winsound.SND_ASYNC)
@@ -246,7 +251,6 @@ def initiate_fight():
         input()
         system('cls')
 
-#Main game loop
 def main():
     print("""
  ____  ____  ____  __   _  _ /___    ____  ___   ___    __    ____  ____ 
@@ -258,10 +262,13 @@ def main():
     print("-"*50)
     print("Tonight is the night. Jason Terulez is hosting the part of the century! It's only a short walk down the road and you've got an invite!\n\nIf only your parents would let you go!\n\nUse your wits to navigate the house, find items to help you sneak out. Just remember to keep an eye on the time!")
     global start
+    input()
     start = time.time()
+    #Starts the background music
     winsound.PlaySound("sounds/bgmusic.wav", winsound.SND_LOOP|winsound.SND_ASYNC)
     global bg_music_playing
     bg_music_playing = True
+    #Main game loop
     while time.time() - start < 600 and current_room["name"] != "window":        
         add_room(item_rope, rooms["B_Bedroom"], "window")
         add_room(item_flamethrower, rooms["D_Hallway"], "basement")

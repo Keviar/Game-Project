@@ -1,7 +1,7 @@
 import time
 import random
 import winsound
-from os import system
+import sys
 
 def spider_web_fight():
 	system('cls')
@@ -62,6 +62,7 @@ def spider_web_fight():
 	if win_fight==False:
 		print("It's over.")
 		time.sleep(2)
+		sys.exit()
 		return win_fight2
 	print ("There is a spider web at.... you!?")
 	time.sleep(3)
