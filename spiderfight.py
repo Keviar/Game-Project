@@ -1,14 +1,14 @@
 import time
 import random
-import system
+from os import system
 
 def spider_web_fight():
-        system('cls')
+	system('cls')
 	basement = ['window', 'cellar', 'door', 'control room']
 	direction = ['front', 'left', 'back', 'right']
 	print("You must burn the spider webs before the timer runs out!")
 	time.sleep(3)
-	print("You must type the direction the web is at! Every time you destroy a web, you face towards the location the web was at.")
+	print("You must type the direction the web is at! Every time you destroy a web, you face at the location the web was at.")
 	time.sleep(3)
 	print("Memorize the room! If you forget where you are facing, you can check where everything is located by typing check.")
 	time.sleep(3)
@@ -19,7 +19,7 @@ def spider_web_fight():
 	time.sleep(1)
 	i=0
 	win_fight = False
-	start_fight = time.time()
+	start_fight=time.time()
 	counter=0
 	while (win_fight==False):
 		m = random.randint(0,3)
