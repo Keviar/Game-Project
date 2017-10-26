@@ -1,6 +1,7 @@
 import time
 import random
 import winsound
+from os import system
 import sys
 
 def spider_web_fight():
@@ -144,3 +145,4 @@ You cannot RUN... you're too deep in this """)
 				print("The spider missed! Keep going.")
 				time.sleep(2)
 	return win_fight2
+spider_web_fight()
