@@ -22,23 +22,27 @@ def list_of_items(items):
 #Prints a list of the items found in the specified room
 def print_room_items(room):
     if room["items"]:
-        print("There is " + list_of_items(room["items"]) + " here.\n")
+        print("There is: ")
         for item in room["items"]:
-	        print ("! " + item["description"] + " !")
+            print(item["id"].upper() + ": " + item["description"])
+        print("You can TAKE any of these.\n")
 
 #Prints a list of items in the player's inventory
 def print_inventory_items(items):
     if inventory:
-        print("You have " + list_of_items(inventory) + ".\n")
+        print("You're carrying: " + list_of_items(inventory) + ". You can use or drop any of these.\n")
 
 #Prints information about the specified room
 def print_room(room):
+    print("-"*50)
     print()
     print(room["name"].upper())
     print()
     y = len(room["description"])- 1
     x = random.randint(1,y)
     print(room["description"][x])
+    print()
+    print("-"*50)
     print()
     print_room_items(room)
 
@@ -52,15 +56,13 @@ def print_exit(direction, leads_to):
 
 #Prints the menu
 def print_menu(exits, room_items, inv_items):
+    print("-"*50)
+    print()
     print("You can:")
     for direction in exits:
         print_exit(direction, exit_leads_to(exits, direction))
-    for item in room_items:
-        print("TAKE " + item["id"].upper() + " to take " + item["name"])
-    for item in inv_items:
-        print("DROP " + item["id"].upper() + " to drop your " + item["name"])
-    for item in inv_items:
-        print ("USE " + item["id"].upper() + " to use your " + item["name"])
+    print("TAKE any items in the room.")
+    print("DROP or USE any items you are carrying.")
     print()    
     print("What would you like to do?")
     print()
@@ -253,7 +255,8 @@ def main():
 (____/(____)(____)(____)(__) (___/  (____)(___/ \___)(__)(__)(__)  (____)
 
 """)
-    print("There is a legendary house party tonight but your parents won't let you go.\nYou have to gather your things and sneak out of the house without your parents noticing.\nGood luck.")
+    print("-"*50)
+    print("Tonight is the night. Jason Terulez is hosting the part of the century! It's only a short walk down the road and you've got an invite!\n\nIf only your parents would let you go!\n\nUse your wits to navigate the house, find items to help you sneak out. Just remember to keep an eye on the time!")
     global start
     start = time.time()
     winsound.PlaySound("sounds/bgmusic.wav", winsound.SND_LOOP|winsound.SND_ASYNC)
