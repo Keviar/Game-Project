@@ -73,7 +73,8 @@ item_flamethrower = {
 
     "name" : "flamethrower",
 
-    "description" : "Just like you saw your mate John do out the back of the school shed, who knew deodeorant could be so fun?! Flamethrower is an understatement."
+    "description" : "Just like you saw your mate John do out the back of the school shed, who knew deodeorant could be so fun?! Flamethrower is an understatement.",
+    
     "abilities" : {}
 }
 
