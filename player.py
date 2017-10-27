@@ -5,4 +5,4 @@ from map import rooms
 inventory = [item_keys, item_watch]
 
 #Room the player starts in.
-current_room = rooms["basement"]
+current_room = rooms["B_Bedroom"]
